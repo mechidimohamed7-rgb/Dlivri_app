@@ -1,0 +1,27 @@
+function sendOrder() {
+
+    let name = document.getElementById("name").value;
+    let phone = document.getElementById("phone").value;
+    let address = document.getElementById("address").value;
+    let order = document.getElementById("order").value;
+    let note = document.getElementById("note").value;
+
+    if(name==="" || phone==="" || address==="" || order===""){
+        alert("يرجى ملء جميع البيانات.");
+        return;
+    }
+
+    localStorage.setItem("customerName", name);
+    localStorage.setItem("customerPhone", phone);
+    localStorage.setItem("customerAddress", address);
+    localStorage.setItem("customerOrder", order);
+    localStorage.setItem("customerNote", note);
+
+    alert("تم إرسال الطلب بنجاح.");
+
+    document.getElementById("name").value="";
+    document.getElementById("phone").value="";
+    document.getElementById("address").value="";
+    document.getElementById("order").value="";
+    document.getElementById("note").value="";
+}
